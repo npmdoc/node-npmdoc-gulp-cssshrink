@@ -1,0 +1,210 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/torrottum/cssshrink-gulp"
+
+    >gulp-cssshrink (v0.1.6)</a>
+</h1>
+<h4>Run CSS through cssshrink</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cssshrink">module gulp-cssshrink</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cssshrink.gulp-cssshrink">
+            function <span class="apidocSignatureSpan"></span>gulp-cssshrink
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cssshrink.toString">
+            function <span class="apidocSignatureSpan">gulp-cssshrink.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cssshrink.toString">module gulp-cssshrink.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cssshrink.toString.toString">
+            function <span class="apidocSignatureSpan">gulp-cssshrink.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cssshrink" id="apidoc.module.gulp-cssshrink">module gulp-cssshrink</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cssshrink.gulp-cssshrink" id="apidoc.element.gulp-cssshrink.gulp-cssshrink">
+        function <span class="apidocSignatureSpan"></span>gulp-cssshrink
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cssShrink() {
+
+  // Creating a stream through which each file will pass
+  var stream = through.obj(function(file, enc, callback) {
+    if (file.isStream()) {
+      this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;Streams are not supported!&#x27;));
+      return callback();
+    }
+
+    if (file.isBuffer()) {
+        if (file.contents.toString().trim() !== &#x27;&#x27;) {
+          file.contents = cssShrinkIt(file.contents.toString());
+        }
+    }
+
+    // make sure the file goes through the next gulp plugin
+    this.push(file);
+    // tell the stream engine that we are done with this file
+    callback();
+  });
+
+  // returning the file stream
+  return stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cssshrink.toString" id="apidoc.element.gulp-cssshrink.toString">
+        function <span class="apidocSignatureSpan">gulp-cssshrink.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var stream = through.obj(function(file, enc, callback) {
+if (file.isStream()) {
+  this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;Streams are not supported!&#x27;));
+  return callback();
+}
+
+if (file.isBuffer()) {
+    if (file.contents.<span class="apidocCodeKeywordSpan">toString</span>().trim() !== &#x27;&#x27;) {
+      file.contents = cssShrinkIt(file.contents.toString());
+    }
+}
+
+// make sure the file goes through the next gulp plugin
+this.push(file);
+// tell the stream engine that we are done with this file
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cssshrink.toString" id="apidoc.module.gulp-cssshrink.toString">module gulp-cssshrink.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cssshrink.toString.toString" id="apidoc.element.gulp-cssshrink.toString.toString">
+        function <span class="apidocSignatureSpan">gulp-cssshrink.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var stream = through.obj(function(file, enc, callback) {
+if (file.isStream()) {
+  this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;Streams are not supported!&#x27;));
+  return callback();
+}
+
+if (file.isBuffer()) {
+    if (file.contents.<span class="apidocCodeKeywordSpan">toString</span>().trim() !== &#x27;&#x27;) {
+      file.contents = cssShrinkIt(file.contents.toString());
+    }
+}
+
+// make sure the file goes through the next gulp plugin
+this.push(file);
+// tell the stream engine that we are done with this file
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
