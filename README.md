@@ -1,4 +1,7 @@
-# api documentation for  [gulp-cssshrink (v0.1.6)](https://github.com/torrottum/cssshrink-gulp)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-cssshrink.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-cssshrink) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-cssshrink.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-cssshrink)
+# npmdoc-gulp-cssshrink
+
+#### basic api documentation for  [gulp-cssshrink (v0.1.6)](https://github.com/torrottum/cssshrink-gulp)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-cssshrink.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-cssshrink) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-cssshrink.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-cssshrink)
+
 #### Run CSS through cssshrink
 
 [![NPM](https://nodei.co/npm/gulp-cssshrink.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-cssshrink)
@@ -65,7 +68,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "0.1.6"
+    "version": "0.1.6",
+    "bin": {}
 }
 ```
 
